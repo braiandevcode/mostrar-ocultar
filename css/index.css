@@ -1,0 +1,121 @@
+/* Reseteo */
+*, ::after,::before{
+    box-sizing: border-box;
+}
+body{
+    background:rgb(16, 120, 165);
+    font-family: sans-serif;
+    color: #FFF;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+/* main */
+main{
+    width: 95%;
+    margin:0 auto;
+    min-height: inherit;
+}
+h1{
+    text-align: center;
+}
+/* USANDO METODOLOGIA BEM */
+
+/* BLOQUE CAJAS MOSTRAR/OCULTAR*/
+.container{
+    max-width: 100%;
+    height: 50vh;
+    background-color: rgba(27, 25, 28, 0.76);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+/* CONTENIDO DE BLOQUE CAJAS MOSTRAR/OCULTAR*/
+.container__box{
+    width: 45%;
+    background-color: #2d055d;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding: .6rem 0;
+    border-radius: 10px;
+    border: 2px dashed currentColor;
+}
+/* CAJA NO VISIBLE*/
+.container--hide{
+    justify-content: end;
+}
+
+.container__box--left{
+    animation: containerVisibilityLeft 4s ease forwards;
+}
+.container__box--right{
+    animation: containerVisibilityRigth 4s ease forwards;
+}
+
+/* ESTILO GENERAL PARA BOTONES */
+.container__btn{
+    cursor: pointer;
+    border: none;
+    color: #FFF;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: .4rem .7rem;
+    border-radius: 17px;
+    box-shadow: -1px -1px 5px currentColor, 1px 1px 5px currentColor;
+}
+
+/* MODIFICANDO BGCOLOR DE BOTON ESPECIFICO USANDO MODIFIER */
+.container__btn--royal{
+    animation: animationButtonLeft 1s ease forwards;
+}
+
+.container__btn--green{
+    animation:animationButtonRight 1s ease forwards;;
+}
+
+
+/* animacion contenedores */
+@keyframes containerVisibilityLeft {
+    from{
+        visibility: hidden;
+        opacity: 0;
+    }
+    to{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+@keyframes containerVisibilityRigth {
+    from{
+        visibility: hidden;
+        opacity: 0;
+    }
+    to{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+/* animacion botones de contenedores*/
+@keyframes  animationButtonRight{
+    from{
+        visibility: hidden;
+        opacity: 0;
+        background-color: royalblue;
+    }
+    to{
+        visibility: visible;
+        opacity: 1;
+        background-color: #0ca513;
+    }
+}
+@keyframes  animationButtonLeft{
+    from{
+        background-color: #0ca513;
+    }
+    to{
+        background-color: royalblue;
+    }
+}
